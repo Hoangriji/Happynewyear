@@ -229,6 +229,25 @@
         <source src="image/nhac.mp3" type="audio/mp3">
     </audio>
 
+    <script>
+        // get request GET name
+        var urlParams = new URLSearchParams(window.location.search);
+        var name = urlParams.get('name');
+        // search name in data_name
+        if (name != null) {
+            for (var i = 0; i < data_name.length; i++) {
+                if (name == data_name[i].name) {
+                    document.getElementById("name-cua-em").innerHTML = data_name[i].name;
+                    document.getElementById("img-cua-em").src = data_name[i].img;
+                    document.getElementById("message-content").innerHTML = data_name[i].message;
+                    break;
+                }
+            }
+        }
+    
+    
+    </script>
+
 <script src="./data.js"></script>
 <script src="./intro.js"></script>
 </body>
